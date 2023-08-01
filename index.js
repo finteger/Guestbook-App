@@ -17,7 +17,7 @@ let guestbookEntries = [
 
 // Route to render the Guestbook page
 app.get('/', (req, res) => {
-  res.render('index', { guestbookEntries });
+  res.render('home', { guestbookEntries });
 });
 
 // Route to add a new guestbook entry

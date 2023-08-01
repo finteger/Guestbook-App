@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guestbook</title>
+</head>
+<body>
+  <h1>Guestbook</h1>
+  <div>
+    <form action="/add" method="post">
+      <label for="name">Name:</label>
+      <input type="text" name="name" required>
+      <label for="message">Message:</label>
+      <input type="text" name="message" required>
+      <button type="submit">Add</button>
+    </form>
+  </div>
+  <ul id="guestbookEntries">
+    <% guestbookEntries.forEach(entry => { %>
+      <li>
+        <strong><%= entry.name %></strong> - <%= entry.message %> (Posted on <%= entry.timestamp.toLocaleString() %>)
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
